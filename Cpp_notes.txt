@@ -1,0 +1,139 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Cpp_notes.txt                                      :+:    :+:             #
+#                                                      +:+                     #
+#    By: greed <greed@student.codam.nl>               +#+                      #
+#                                                    +#+                       #
+#    Created: 2020/07/24 18:01:04 by greed         #+#    #+#                  #
+#    Updated: 2020/07/24 18:01:05 by greed         ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+Cpp is strange as shit, so let's compile a notesheet so I don't forget
+everything.
+
+** -- **				** -- **				** -- **
+Includes, not sure what is inside of these yet so lets find out!
+
+#include <iostream> :
+-
+std::cout ---
+The global objects std::cout and std::wcout control output to a stream buffer of
+	implementation-defined type (derived from std::streambuf), associated with
+	the standard C output stream stdout.
+-
+std::endl ---
+Inserts a newline character into the output sequence os and flushes it as if by
+	calling os.put(os.widen('\n')) followed by os.flush().
+
+This is an output-only I/O manipulator, it may be called with an expression such
+	as out << std::endl for any out of type std::basic_ostream.
+With \n instead of endl, the output would be the same, but may not appear in real time.
+
+#include <string> :
+-
+std::toupper
+Converts the given character to uppercase according to the character conversion rules
+	defined by the currently installed C locale.
+-
+str.at(INT);
+Returns a reference to the character at position pos in the string.
+
+The function automatically checks whether pos is the valid position of a character 
+	in the string (i.e., whether pos is less than the string length), throwing an 
+	out_of_range exception if it is not.
+
+#include <fstream> :
+-
+
+_________  ++					_________  +++++  _________				_________  ++
+
+SIMPLE FUNCTIONS
+** HELLO WORLD **
+int	main(){
+	std::cout << "Hello World" << std::endl;
+	return (0);
+}
+
+int		main(){
+	std::cout << "Hello World" << std::endl;
+
+	const double PI = 3.141592635;
+	char myGrade = 'A';
+	bool isHappy = true;
+	int myAge = 39;
+	int	five = 5;
+	int	largetInt = 2147483647;
+	float favNum = 3.141592;
+	double otherfavNum = 1.6180339887;
+
+	std::cout << "Favorite Number " << favNum << std::endl;
+	std::cout << "Size of int " << sizeof(myAge) << std::endl;
+	std::cout << "Larget int = " << largetInt << std::endl;
+
+	std::cout << "5++ " << five++ << std::endl; // = 5
+	std::cout << "++5 " << ++five << std::endl; // = 7
+	std::cout << "5-- " << five-- << std::endl; // = 7
+	std::cout << "--5 " << --five << std::endl; // = 5
+	
+	std::cout << "4 / 5 = " << 4 / 5 << std::endl; // = 0 
+	std::cout << "4 / 5 = " << (float) 4 / 5 << std::endl; // = 0.8 
+	return (0);
+}
+
+********** _______________________________________________ **********
+
+int main(){
+	int age = 70;
+	int ageAtLastExam = 16;
+	bool isNotDrunk = true;
+
+	if(((age >= 1) (&& age < 16)) || !isNotDrunk){
+		std::cout << "No Driving for you" << std::endl;
+	}
+
+}
+
+				*** 		SWITCH		 ***
+int main(){
+	int greetingOption = 2;
+
+	switch(greetingOption){
+		case 1:
+			std::cout << "sveiki" << std::endl;
+			break;
+		case 2:
+			std::cout << "privet" << std::endl; <<--- WILL PRINT THIS
+			break;
+		case 3:
+			std::cout << "hola" << std::endl;
+			break;
+		default :
+			std::cout << "WAZZUP" << std::endl;
+	}
+	return (0);
+}
+				*** 		TERNARY 		 ***
+				
+int main(){ 
+	
+	variable = (condition) ? value(IF TRUE) : value(IF FALSE)
+	int largestNum = (5>2) ? 5 : 2;
+}
+				*** 		TERNARY 		 ***
+
+int main(){
+	
+	int myFavNums[5];
+	int badNums[5] = {4, 13, 14, 24, 34};
+
+	std::cout << "Bad Number 1: " << badNums[0] << std::endl;
+
+	char myName[5][5] = {{'D', 'e', 'r', 'e', 'k'},
+						{'B', 'a', 'n', 'a', 's'}};
+}
+______________________________________________________________________________________
+
+COMPILING
+clang++ TARGET-NAME TARGET-FILE.cpp
