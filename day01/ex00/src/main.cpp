@@ -26,7 +26,7 @@ void	ponyOnTheHeap(void){
 }
 
 void	ponyOnTheStack(void){
-	std::cout << std::setw(44) << std::setfill('_') << '_' << std::endl;
+	std::cout << std::setw(44) << std::setfill('.') << '.' << std::endl;
 	std::cout << "We are in the Lovely land o' stack" << std::endl;
 	Pony frank;
 	frank.ToString();
@@ -35,5 +35,7 @@ void	ponyOnTheStack(void){
 
 int		main(void){
 	ponyOnTheHeap();
+	std::cout << std::setw(44) << std::setfill('.') << '.' << std::endl;
+	std::cout << "Back in Main" << std::endl;
 	ponyOnTheStack();
 }
