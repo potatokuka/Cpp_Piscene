@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 
 class Warrior{
-	private:
+	/* protected: */
+	/* 	int			_attMax; */
+	/* 	int			_blockMax; */
+	public:
 		int			_attMax;
 		int			_blockMax;
-	public:
 		std::string	name;
 		int			health;
 		Warrior(std::string name, int health,
@@ -39,25 +41,81 @@ class Battle{
 			{
 				if (Battle::GetAttackResult(warrior1, warrior2).compare("Game Over") == 0)
 				{
-					std::cout << "Game Over\n";
+					std::cout << "Slipper Slap Champ has been crowned\n";
 					break;
 				}
 				if (Battle::GetAttackResult(warrior2, warrior1).compare("Game Over") == 0)
 				{
-					std::cout << "Game Over\n";
+					std::cout << "Slipper Slap Champ has been crowned\n";
 					break;
 				}
 			}
 
 		}
 		static std::string	GetAttackResult(Warrior& warriorA, Warrior& warriorB){
+			if (warriorA.name == "Liene")
+			{
+				int special = (std::rand() % 100);
+				if (special > 50)
+				{
+					int Calling = (std::rand() % 100);
+					Calling = (Calling <= 0) ? 1 : Calling;
+					if (Calling)
+					{
+						if (Calling > 35)
+						{
+							int warriorAAttkAmt = warriorA._attMax;
+							int warriorBBlockAmt = warriorB.Block();
+							int damage2WarriorB = ceil(warriorAAttkAmt - warriorBBlockAmt);
+							damage2WarriorB = (damage2WarriorB <= 0) ? 0 : damage2WarriorB;
+							warriorB.health = warriorB.health - damage2WarriorB;
+
+
+							printf("%s HAS INSANE CALLING %s and deals a whopping %d damage\n",
+								warriorA.name.c_str(),
+								warriorB.name.c_str(),
+								damage2WarriorB);
+							printf("%s is down to %d health\n",
+								warriorB.name.c_str(),
+								warriorB.health);
+							if(warriorB.health <= 0)
+							{
+								printf("%s has his asshole ripped in two  %s is VICTORIOUS\n",
+									warriorB.name.c_str(),
+									warriorA.name.c_str());
+									return ("Game Over");
+							}
+							else
+								return ("Fight On");
+
+						}
+						else
+						{
+							int damage2WarriorB = 0;
+							printf("%s HAS HIT THE GOOCH %s and deals %d damage\n",
+								warriorA.name.c_str(),
+								warriorB.name.c_str(),
+								damage2WarriorB);
+							if(warriorB.health <= 0)
+							{
+								printf("%s has been slapped with the slipper %s is VICTORIOUS\n",
+									warriorB.name.c_str(),
+									warriorA.name.c_str());
+									return ("Game Over");
+							}
+							else
+								return ("Fight On");
+						}
+					}
+				}
+			}
 			int warriorAAttkAmt = warriorA.Attack();
 			int warriorBBlockAmt = warriorB.Block();
 			int damage2WarriorB = ceil(warriorAAttkAmt - warriorBBlockAmt);
 			damage2WarriorB = (damage2WarriorB <= 0) ? 0 : damage2WarriorB;
 			warriorB.health = warriorB.health - damage2WarriorB;
 
-			printf("%s attacks %s and deals %d damage\n",
+			printf("%s slaps %s and deals %d damage\n",
 					warriorA.name.c_str(),
 					warriorB.name.c_str(),
 					damage2WarriorB);

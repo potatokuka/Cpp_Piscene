@@ -26,9 +26,9 @@ int	main(){
 	tom.ToString();
 	std::cout << std::setw(44) << std::setfill('_') << "\n";
 	srand(time(NULL));
-	Warrior thor("Thor", 100, 30, 15);
-	Warrior hulk("HULK", 135, 35, 10);
+	Warrior liene("Liene", 100, 30, 15);
+	Warrior griffin("Griffin", 135, 35, 10);
 
-	Battle::StartFight(thor, hulk);
+	Battle::StartFight(liene, griffin);
 	return (0);
 }

@@ -10,14 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	phonebook
+NAME			=	horse
 
 SRCS			=	src/main.cpp\
-					src/Database.class.cpp\
-					src/Contact.class.cpp
+					src/Pony.class.cpp
 OBJ				=	src/main.o\
-					src/Database.class.o\
-					src/Contact.class.o
+					src/Pony.class.o
 CXXFLAGS		=	-Wall -Wextra -Werror -pedantic -ansi
 CXX				=	clang++
 # COLORS
@@ -36,13 +34,13 @@ all: $(NAME)
 %.o: %.c
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)/-----	Compiling phonebook		-----\\ $(RESET)"
+	@echo "$(YELLOW)/-----	Compiling horse		-----\\ $(RESET)"
 	$(CXX)  -o $(NAME) $(OBJ)
 clean:
-	@echo "$(RED)/-----	Cleaning phonebook		-----\\ $(RESET)"
+	@echo "$(RED)/-----	Cleaning horse		-----\\ $(RESET)"
 	rm -f $(OBJ)
 fclean: clean
-	@echo "$(BLUE)/-----	Fcleaning phonebook		-----\\ $(RESET)"
+	@echo "$(BLUE)/-----	Fcleaning horse		-----\\ $(RESET)"
 	rm -f $(NAME)
 re: fclean all
 .PHONY: all clean fclean re

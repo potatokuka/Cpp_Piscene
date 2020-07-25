@@ -37,7 +37,7 @@ Animal::Animal(){
 }	
 
 Animal::~Animal(){
-	std::cout << "Animal " << this->_name << " DESTROYED\n";
+	/* std::cout << "Animal " << this->_name << " DESTROYED\n"; */
 }
 
 void Animal::ToString(){
