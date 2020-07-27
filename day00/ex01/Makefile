@@ -17,7 +17,7 @@ SRCS			=	src/main.cpp\
 					src/Contact.class.cpp
 OBJ				=	src/main.o\
 					src/Database.class.o\
-					src/Contact.class.ow
+					src/Contact.class.o
 CXXFLAGS		=	-Wall -Wextra -Werror -pedantic -ansi
 CXX				=	clang++
 # COLORS

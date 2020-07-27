@@ -56,6 +56,8 @@ int		main(void){
 				std::getline(std::cin, input);
 				if (!std::cin.good())
 					exit(0);
+				if (input.compare("EXIT") == 0)
+					exit(0);
 				std::stringstream convert(input);
 				if (convert >> index && index >= 0 && index < db.Count())
 					break;
