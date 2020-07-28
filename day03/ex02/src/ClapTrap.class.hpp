@@ -13,7 +13,6 @@
 #ifndef CLAPTRAP_CLASS_HPP
 # define CLAPTRAP_CLASS_HPP
 
-#include <iostream>
 #include <string>
 
 class ClapTrap{

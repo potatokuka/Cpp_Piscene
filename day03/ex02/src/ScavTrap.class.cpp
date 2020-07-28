@@ -43,8 +43,8 @@ void	ScavTrap::rangedAttack(std::string const &target){
 }
 
 void	ScavTrap::meleeAttack(std::string const &target){
-	std::cout << "<SC4V-TP> 'Chicken, Peter, you're just a little \
-		chicken' " << this->_name << " attacks with the power of Loud Noises!"
+	std::cout << "<SC4V-TP> 'Chicken, Peter, you're just a little chicken' "
+			<< this->_name << " attacks with the power of Loud Noises!"
 		<< target << " dealing *" << this->_meleeDmg << "* of melee damage!" << std::endl;
 }
 
