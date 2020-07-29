@@ -27,11 +27,11 @@ class ClapTrap{
 		unsigned int				_rangedDmg;
 		unsigned int				_armor;
 	public:
-		/* unsigned int 				curr_hp; */
+		unsigned int 				curr_hp;
 		ClapTrap(const std::string _name, unsigned int _health,
 				unsigned int _maxHealth, unsigned int _energy, unsigned int _maxEnergy,
 				unsigned int _level, unsigned int _meleeDmg, unsigned int _rangedDmg,
-				unsigned int _armor);
+				unsigned int _armor, unsigned int curr_hp);
 		ClapTrap(const ClapTrap &obj);
 		~ClapTrap();
 		ClapTrap&					operator=(const ClapTrap &rhs);

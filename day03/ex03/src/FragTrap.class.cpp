@@ -6,27 +6,26 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 14:34:18 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/29 11:19:42 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/29 11:15:04 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
+#include "ClapTrap.class.hpp"
 #include "FragTrap.class.hpp"
 
 FragTrap::FragTrap(const std::string name) :
-	_name(name), _health(100), _maxHealth(100), _energy(100), _maxEnergy(100),
-	_level(1), _meleeDmg(30), _rangedDmg(20), _armor(5), curr_hp(100)
+	ClapTrap(name, 100, 100, 100, 100, 1, 30, 20, 5, 100)
 {
-	std::cout << "-BEEP BOOP- \033[1;35m<FR4G-TP>\033[0m <" << this->_name << "> has been ACTIVATED!"
+	std::cout << std::endl << "-BEEP BOOP- \033[1;35m<FR4G-TP>\033[0m <"
+		<< this->_name << "> has been ACTIVATED!"
 		<< " prepare for world domination. Through the power of SPARKLES" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &rhs) :
-	_name(rhs._name), _health(rhs._health), _maxHealth(rhs._maxHealth), _energy(rhs._energy),
-	_maxEnergy(rhs._maxEnergy), _level(rhs._level), _meleeDmg(rhs._meleeDmg),
-	_rangedDmg(rhs._rangedDmg), _armor(rhs._armor), curr_hp(rhs.curr_hp)
+	ClapTrap(rhs)
 {
 	std::cout << "-BEEP BOOP- \033[1;35m<FR4G-TP>\033[0m <" << this->_name << "> has been ACTIVATED!"
 		<< " prepare for world domination. Through the power of SPARKLES" << std::endl;
@@ -69,10 +68,6 @@ void	FragTrap::beRepaired(unsigned int amount){
 		(this->_health += amount);
 	this->curr_hp = this->_health;
 
-	/* if (amount + this->_health >= this->max_health) */
-	/* 	this->_health = this->_maxHealth; */
-	/* else */
-	/* 	this->_health += amount; */
 	std::cout << "\033[1;35m<FR4G-TP>\033[0m 'There's no comfort in the truth, Pain is all you'll find' "
 		<< this->_name << " took a large swig of Champagne and is feeling better. "
 		<< amount << " better exactly, with a total of " << this->_health <<

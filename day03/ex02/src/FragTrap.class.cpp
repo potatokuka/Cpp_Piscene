@@ -6,7 +6,7 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 14:34:18 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/28 21:44:38 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/29 11:19:10 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,40 @@
 #include "FragTrap.class.hpp"
 
 FragTrap::FragTrap(const std::string name) :
-	ClapTrap(name, 100, 100, 100, 100, 1, 30, 20, 5)
+	ClapTrap(name, 100, 100, 100, 100, 1, 30, 20, 5, 100)
 {
-	std::cout << "-BEEP BOOP- FR4G-TP <" << this->_name << "> has been ACTIVATED!"
+	std::cout << "-BEEP BOOP- \033[1;35m<FR4G-TP>\033[0m <" << this->_name << "> has been ACTIVATED!"
 		<< " prepare for world domination. Through the power of SPARKLES" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &rhs) :
 	ClapTrap(rhs)
 {
-	std::cout << "-BEEP BOOP- FR4G-TP <" << this->_name << "> has been ACTIVATED!"
+	std::cout << "-BEEP BOOP- \033[1;35m<FR4G-TP>\033[0m <" << this->_name << "> has been ACTIVATED!"
 		<< " prepare for world domination. Through the power of SPARKLES" << std::endl;
 }
 
 FragTrap::~FragTrap(){
-	std::cout << "*sputter *sputter FR4G-TP " << this->_name <<
+	std::cout << "*sputter *sputter \033[1;35m<FR4G-TP>\033[0m " << this->_name <<
 		" sheen has gone dull, it was not fabulous enough." << " Go on without me brothers!"
 		<< std::endl;
 }
 
 void	FragTrap::rangedAttack(std::string const &target){
-	std::cout << "FR4G-TP 'As I take your hand and lead you to the dance floor' " <<
+	std::cout << "\033[1;35m<FR4G-TP>\033[0m 'As I take your hand and lead you to the dance floor' " <<
 		", " << this->_name << " grabs a robot handful of glitter and hurls it at "
 		<< target << " dealing *" << this->_rangedDmg << "* of damage from range!"
 		<< std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const &target){
-	std::cout << "FR4G-TP 'So I'm never gonna dance again' " << this->_name <<
+	std::cout << "\033[1;35m<FR4G-TP>\033[0m 'So I'm never gonna dance again' " << this->_name <<
 		" raises their guilty feet without any rythm, and attacks " << target
 		<< " dealing *" << this->_meleeDmg << "* of melee damage!" << std::endl;
 }
 
 void	FragTrap::takeDamage(unsigned int amount){
-	std::cout << "FR4G-TP I should've known better than to cheat a friend!" << std::endl;
+	std::cout << "\033[1;35m<FR4G-TP>\033[0m I should've known better than to cheat a friend!" << std::endl;
 	/* this->_health = this->curr_hp; */
 	(amount >= this->_armor) ? (amount -= this->_armor) : 0;
 	
@@ -67,7 +67,7 @@ void	FragTrap::beRepaired(unsigned int amount){
 		(this->_health += amount);
 	this->curr_hp = this->_health;
 
-	std::cout << "FR4G-TP 'There's no comfort in the truth, Pain is all you'll find' "
+	std::cout << "\033[1;35m<FR4G-TP>\033[0m 'There's no comfort in the truth, Pain is all you'll find' "
 		<< this->_name << " took a large swig of Champagne and is feeling better. "
 		<< amount << " better exactly, with a total of " << this->_health <<
 		" left. The dance must go on!" << std::endl;
@@ -95,7 +95,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target){
 		return ;
 	}
 	this->_energy -= 25;
-	std::cout << "FR4G-TP uses " << FragTrap::_vaulThunter[std::rand() % MAX_QUOTES]
+	std::cout << "\033[1;35m<FR4G-TP>\033[0m uses " << FragTrap::_vaulThunter[std::rand() % MAX_QUOTES]
 		<<  " For extra GLITTER from the power of vaulthunter.exe, on " << target
 		<< " it's SUPER effective!" << std::endl;
 }

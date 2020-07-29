@@ -6,7 +6,7 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 22:57:09 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/29 11:18:39 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/29 11:17:46 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 ScavTrap::ScavTrap(const std::string name) :
 	ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3, 100)
 {
-	std::cout << "'I did not hit her. I did noooot' \033[1;33m<SC4V-TP>\033[0m <" << this->_name <<
-		"> has entered." << " 'Oh hi Mark!'" << std::endl;
+	std::cout << std::endl << "'I did not hit her. I did noooot' \033[1;33m<SC4V-TP>\033[0m <"
+		<< this->_name << "> has entered." << " 'Oh hi Mark!'" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &rhs) :

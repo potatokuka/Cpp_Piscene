@@ -6,7 +6,7 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 22:57:09 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/29 11:18:39 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/29 11:20:31 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 #include <iostream>
 
 #include "ScavTrap.class.hpp"
-#include "ClapTrap.class.hpp"
 
 ScavTrap::ScavTrap(const std::string name) :
-	ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3, 100)
+	_name(name), _health(100), _maxHealth(100), _energy(50), _maxEnergy(50),
+	_level(1), _meleeDmg(20), _rangedDmg(15), _armor(3), curr_hp(100)
 {
-	std::cout << "'I did not hit her. I did noooot' \033[1;33m<SC4V-TP>\033[0m <" << this->_name <<
+	std::cout << "'I did not hit her. I did noooot' SC4V-TP <" << this->_name <<
 		"> has entered." << " 'Oh hi Mark!'" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &rhs) :
-	ClapTrap(rhs)
+	_name(rhs._name), _health(rhs._health), _maxHealth(rhs._maxHealth), _energy(rhs._energy),
+	_maxEnergy(rhs._maxEnergy), _level(rhs._level), _meleeDmg(rhs._meleeDmg),
+	_rangedDmg(rhs._rangedDmg), _armor(rhs._armor), curr_hp(rhs.curr_hp)
 {
 	std::cout << "'I did not hit her. I did noooot' \033[1;33m<SC4V-TP>\033[0m <" << this->_name <<
 		"> has entered." << " 'Oh hi Mark!'" << std::endl;
@@ -43,8 +45,8 @@ void	ScavTrap::rangedAttack(std::string const &target){
 }
 
 void	ScavTrap::meleeAttack(std::string const &target){
-	std::cout << "\033[1;33m<SC4V-TP>\033[0m 'Chicken, Peter, you're just a little chicken' "
-			<< this->_name << " attacks with the power of Loud Noises!"
+	std::cout << "\033[1;33m<SC4V-TP>\033[0m 'Chicken, Peter, you're just a little \
+		chicken' " << this->_name << " attacks with the power of Loud Noises!"
 		<< target << " dealing *" << this->_meleeDmg << "* of melee damage!" << std::endl;
 }
 

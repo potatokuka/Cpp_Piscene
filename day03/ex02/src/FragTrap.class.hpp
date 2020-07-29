@@ -6,7 +6,7 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 14:34:36 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/28 14:34:37 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/29 14:22:16 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <iostream>
 # include "ClapTrap.class.hpp"
 # define MAX_QUOTES 11
-# define FRAG		1
-# define FRAG2		2
+# define FRAG		0
+# define FRAG2		1
 
 class FragTrap : public ClapTrap{
 	private:
@@ -28,7 +28,6 @@ class FragTrap : public ClapTrap{
 		FragTrap(const FragTrap &obj);
 		~FragTrap();
 		FragTrap&					operator=(const FragTrap &rhs);
-		unsigned int 				curr_hp;
 		void						rangedAttack(std::string const &target);
 		void						meleeAttack(std::string const &target);
 		void						takeDamage(unsigned int amount);

@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.class.hpp                                 :+:    :+:            */
+/*   NinjaTrap.class.hpp                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 22:57:06 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/28 22:59:27 by greed         ########   odam.nl         */
+/*   Created: 2020/07/29 11:07:21 by greed         #+#    #+#                 */
+/*   Updated: 2020/07/29 11:07:22 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_CLASS_HPP
-# define SCAVTRAP_CLASS_HPP
+#ifndef NINJATRAP_CLASS_H
+# define NINJATRAP_CLASS_H
 
-#include <string>
-#include "ClapTrap.class.hpp"
-# define MAX_CHALLENGE	11
+# include <string>
 
-class ScavTrap : public ClapTrap{
+# include "ClapTrap.class.hpp"
+# include "FragTrap.class.hpp"
+# include "ScavTrap.class.hpp"
+
+class NinjaTrap : public ClapTrap{
 	private:
-		static std::string			_challenges[MAX_CHALLENGE];
+		static std::string	_vaulThunter[MAX_QUOTES];
 	public:
-		ScavTrap(const std::string _name);
-		ScavTrap(const ScavTrap &obj);
-		~ScavTrap();
-		ScavTrap&					operator=(const ScavTrap &rhs);
+		NinjaTrap(const std::string name);
+		NinjaTrap(const NinjaTrap &obj);
+		~NinjaTrap();
+		
+		NinjaTrap&			operator=(const NinjaTrap &rhs);
 		void						rangedAttack(std::string const &target);
 		void						meleeAttack(std::string const &target);
 		void						takeDamage(unsigned int amount);
 		void						beRepaired(unsigned int amount);
-		void						challengeNewcomer(std::string const &target);
+
+		void						ninjaShoebox(NinjaTrap &target);
+		void						ninjaShoebox(ClapTrap &target);
+		void						ninjaShoebox(FragTrap &target);
+		void						ninjaShoebox(ScavTrap &target);
 };
 
 #endif

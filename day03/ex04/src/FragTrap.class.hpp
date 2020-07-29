@@ -6,7 +6,7 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 14:34:36 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/29 14:21:51 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/28 14:34:37 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,21 @@
 
 #include <string>
 #include <iostream>
+# include "ClapTrap.class.hpp"
 # define MAX_QUOTES 11
 # define FRAG		0
 # define FRAG2		1
+# define NINJA		2
+# define SUPA		3
 
-class FragTrap{
+class FragTrap : virtual public ClapTrap{
 	private:
-		std::string					_name;
-		unsigned int				_health;
-		unsigned int				_maxHealth;
-		unsigned int				_energy;
-		unsigned int				_maxEnergy;
-		unsigned int				_level;
-		unsigned int				_meleeDmg;
-		unsigned int				_rangedDmg;
-		unsigned int				_armor;
 		static std::string			_vaulThunter[MAX_QUOTES];
 	public:
 		FragTrap(const std::string _name);
 		FragTrap(const FragTrap &obj);
 		~FragTrap();
 		FragTrap&					operator=(const FragTrap &rhs);
-		unsigned int 				curr_hp;
 		void						rangedAttack(std::string const &target);
 		void						meleeAttack(std::string const &target);
 		void						takeDamage(unsigned int amount);

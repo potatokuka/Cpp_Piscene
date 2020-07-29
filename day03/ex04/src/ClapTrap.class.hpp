@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.class.hpp                                 :+:    :+:            */
+/*   ClapTrap.class.hpp                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 14:34:36 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/29 14:21:51 by greed         ########   odam.nl         */
+/*   Created: 2020/07/29 00:26:52 by greed         #+#    #+#                 */
+/*   Updated: 2020/07/29 00:46:41 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#ifndef CLAPTRAP_CLASS_HPP
+# define CLAPTRAP_CLASS_HPP
 
 #include <string>
-#include <iostream>
-# define MAX_QUOTES 11
-# define FRAG		0
-# define FRAG2		1
 
-class FragTrap{
-	private:
+class ClapTrap{
+	protected:
 		std::string					_name;
 		unsigned int				_health;
 		unsigned int				_maxHealth;
@@ -30,18 +26,21 @@ class FragTrap{
 		unsigned int				_meleeDmg;
 		unsigned int				_rangedDmg;
 		unsigned int				_armor;
-		static std::string			_vaulThunter[MAX_QUOTES];
 	public:
-		FragTrap(const std::string _name);
-		FragTrap(const FragTrap &obj);
-		~FragTrap();
-		FragTrap&					operator=(const FragTrap &rhs);
+		ClapTrap(void);
+		ClapTrap(const std::string _name, unsigned int _health,
+				unsigned int _maxHealth, unsigned int _energy, unsigned int _maxEnergy,
+				unsigned int _level, unsigned int _meleeDmg, unsigned int _rangedDmg,
+				unsigned int _armor, unsigned int curr_hp);
+		ClapTrap(const ClapTrap &obj);
+		~ClapTrap();
+		ClapTrap&					operator=(const ClapTrap &rhs);
 		unsigned int 				curr_hp;
-		void						rangedAttack(std::string const &target);
-		void						meleeAttack(std::string const &target);
-		void						takeDamage(unsigned int amount);
-		void						beRepaired(unsigned int amount);
-		void						vaulthunter_dot_exe(std::string const &target);
+		std::string					getName() const;
+		/* void						rangedAttack(std::string const &target); */
+		/* void						meleeAttack(std::string const &target); */
+		/* void						takeDamage(unsigned int amount); */
+		/* void						beRepaired(unsigned int amount); */
 };
 
 #endif
