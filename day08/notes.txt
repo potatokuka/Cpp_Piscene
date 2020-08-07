@@ -1,0 +1,5 @@
+ship monitor: 60
+small tools: 40
+desk chair: 120
+desk: 100
+food 3 weeks: 200

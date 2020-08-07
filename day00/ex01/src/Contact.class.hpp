@@ -17,8 +17,7 @@
 
 # define FIELD_COUNT 11
 
-class Contact
-{
+class Contact{
 	public:
 		Contact(void);
 		~Contact(void);

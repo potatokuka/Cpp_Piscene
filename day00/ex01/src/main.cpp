@@ -6,7 +6,7 @@
 /*   By: greed <greed@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 09:25:15 by greed         #+#    #+#                 */
-/*   Updated: 2020/07/25 09:25:16 by greed         ########   odam.nl         */
+/*   Updated: 2020/07/27 16:38:58 by greed         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ int		main(void){
 			std::cout << std::endl;
 			db.GetContact(index).Display();
 		}
+		else
+			std::cout << "Valid command options: [ADD] [SEARCH] [EXIT]"
+				<< std::endl;
 	}
 	return (0);
 }

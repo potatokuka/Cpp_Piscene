@@ -44,7 +44,6 @@ void	displayField(std::string field){
 	if (field.size() > 10)
 	{
 		std::cout << truncate(field, 9);
-		/* std::cout << std::setw(9) << std::setfill('.') << field; */
 	}
 	else
 		std::cout << std::setw(10) << std::right << std::setfill(' ') << field;

@@ -38,4 +38,5 @@ int		main(void){
 	std::cout << std::setw(44) << std::setfill('.') << '.' << std::endl;
 	std::cout << "Back in Main" << std::endl;
 	ponyOnTheStack();
+	return (0);
 }

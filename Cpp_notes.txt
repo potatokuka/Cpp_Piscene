@@ -6,7 +6,7 @@
 #    By: greed <greed@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/24 18:01:04 by greed         #+#    #+#                  #
-#    Updated: 2020/07/24 18:01:05 by greed         ########   odam.nl          #
+#    Updated: 2020/08/07 15:55:52 by greed         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -244,4 +244,44 @@ int main(){
 	std::cout << "instance.foo = " << instance.foo << std::endl;
 	instance.bar();
 	return (0);
+}
+
+int main(){
+
+FragTrap frag;
+ClapTrap clap;
+
+for (int i = 0; i < 10; i++){
+	frag.meleeAttack("Small Dick Boi");
+}
+for (int i = 0; i < 10; i++){
+	frag.takeDamage(30);
+}
+for (int i = 0; i < 10; i++){
+	frag.rangedAttack("Small Dick Boi");
+}
+for (int i = 0; i < 10; i++){
+	frag.vaulthunter_dot_exe("Small Dick Boi");
+}
+for (int i = 0; i < 10; i++){
+	frag.beRepaired(10);
+}
+// ______________________________________________________________________________________
+
+for (int i = 0; i < 10; i++){
+	clap.meleeAttack("Small Dick Boi");
+}
+for (int i = 0; i < 10; i++){
+	clap.takeDamage(30);
+}
+for (int i = 0; i < 10; i++){
+	clap.rangedAttack("Small Dick Boi");
+}
+for (int i = 0; i < 10; i++){
+	clap.SPECIAL_ATTACK_I_DONT_REMEMBER_THE_NAME("Small Dick Boi");
+}
+for (int i = 0; i < 10; i++){
+	clap.beRepaired(10);
+}
+
 }
