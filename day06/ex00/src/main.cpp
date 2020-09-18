@@ -60,13 +60,13 @@ int			main(int ac, char **av){
 			ss >> res;
 	}
 	// double
-	if (!(isinf(res) || isnan(res)) && (res < DBL_MIN || res > DBL_MAX) && (res != 0))
+	if (!(isinf(res) || isnan(res)) && (res < -DBL_MAX || res > DBL_MAX))
 		std::cerr << "Double: Impossible" << std::endl;
 	else
 		std::cout << "Double: " << std::fixed << std::setprecision(1)
 			<< static_cast<double>(res) << std::endl;
 	// float
-	if (!(isinf(res) || isnan(res)) && (res < FLT_MIN || res > FLT_MAX) && (res != 0))
+	if (!(isinf(res) || isnan(res)) && (res < -FLT_MAX|| res > FLT_MAX))
 		std::cerr << "Float: Impossible" << std::endl;
 	else
 	std::cout << "Float: " << std::fixed << std::setprecision(1)

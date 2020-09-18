@@ -21,8 +21,6 @@ int		main(){
 		mStack.push(i);
 	MutantStack<int>::iterator it = mStack.begin();
 	MutantStack<int>::iterator ite = mStack.end();
-	it++;
-	it--;
 	std::cout << std::endl;
 	std::cout << mStack.size() << " \033[1;35mitems in mStack\033[m" << std::endl;
 	int j = 0;
